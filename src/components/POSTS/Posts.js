@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { MyContext } from '../Context'
+import React from 'react'
+
 import './Posts.css'
 
 function Posts({img,message}) {
