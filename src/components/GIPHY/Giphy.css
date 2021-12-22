@@ -1,0 +1,42 @@
+.giphy__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+  width: 210px;
+  padding: 5px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
+  z-index: 6;
+}
+.gif__wrapper {
+  margin-top: 5px;
+  overflow-y: scroll;
+  display: flex;
+
+  flex-direction: column;
+}
+.gif {
+  width: 210px;
+  height: 200px;
+  margin-top: 5px;
+}
+.search_input {
+  width: 200px;
+  outline: none;
+  border: 1px solid gainsboro;
+  padding: 5px;
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
