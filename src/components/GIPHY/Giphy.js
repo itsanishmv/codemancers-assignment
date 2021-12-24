@@ -4,16 +4,21 @@ import './Giphy.css'
 
 function Giphy() {
     const {setstate, gif, setGif, loading, setLoading, setclickedGif} = useContext(MyContext)
-    
+
     // const REACT_APP__KEY = 'cKsjWR7sqTaCItoEbK93spDaTtN5FuzF'
-    const endPointTrending = `http://api.giphy.com/v1/gifs/trending?api_key=${ process.env.REACT__APP__API__KEY }&limit=10`
+    const endPointTrending = `https://g.tenor.com/v1/trending?key=${process.env.REACT__APP__API__KEY}&limit=10`
     const domNode = useRef()
 
      useEffect(() => {
              fetch(endPointTrending)
                  .then(res => res.json())
-             .then(data => setGif(data.data))
-     })
+                 .then(data => {
+                   
+                     setGif(data.results)
+                    
+             } )
+            
+     },[])
     
     useEffect(() => {
         document.addEventListener("mousedown", (e) => {
@@ -21,21 +26,22 @@ function Giphy() {
               setstate(false)
             }
           })
-    })
+    },[])
  
     const getData = (e) => {
      
-        const endPointSearch = `http://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT__APP__API__KEY}&limit=10&q=${e.target.value}`
+       const endPointSearch = `https://g.tenor.com/v1/search?q=${e.target.value}&key=${process.env.REACT__APP__API__KEY}&limit=10`
         fetch(endPointSearch)
         .then(res => {
             setLoading(true)
             return res.json()
         })
         .then(data => {
-            setGif(data.data)
+            setGif(data.results)
             setLoading(false)
+       
         })
-        console.log(gif)
+        
     }
        
     const debounce = (getData) => {
@@ -63,7 +69,7 @@ function Giphy() {
                 {loading ? <img style={{zIndex:"3"}} src="./loading2.svg" alt="loading" />
                     :
                     gif?.map(images => (
-                        <img onClick={pickGif} className='gif' src={images.images.fixed_height.webp} alt="gif" />
+                        <img onClick={pickGif} className='gif' src={images.media[0].gif.url} alt="gifs" />
                 )) }
             </div>
           

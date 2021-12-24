@@ -14,7 +14,7 @@ function App() {
         setstate(false)
       }
     })
-  })
+  },[])
   
   return (
     <div  className="App">

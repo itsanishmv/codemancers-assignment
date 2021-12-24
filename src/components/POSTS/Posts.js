@@ -12,7 +12,7 @@ function Posts({img,message}) {
                 <h4 className='post__name'>Elon musk</h4>
             </div>
             <div className='post__message__head'>
-                     <div className='post__message'>{message}</div>
+                <h4 className='message'>{message}</h4>
             </div>
            
             

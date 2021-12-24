@@ -8,7 +8,7 @@ function ComposePost() {
     const { state, setstate,clickedGif,setclickedGif,text,setText,setPostsArray,postsArray } = useContext(MyContext)
     
     function showGIF() {
-       console.log("showgif")
+       
         setstate(!state)
     }
    

@@ -30,10 +30,14 @@
   outline: none;
   border: none;
 } */
-.post__message {
-  width: 500px;
-  /* border: 2px solid black; */
-}
-.post__message__head {
-  width: 500px;
+.message {
+  border: 2px solid black;
+  max-height: 400px;
+  outline: none;
+  border: none;
+  overflow-wrap: break-word;
+  width: 550px;
+  line-height: 15px;
+  font-size: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
